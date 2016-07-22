@@ -21,10 +21,5 @@ This syllabus will adapt to what people are most interested in.
 | Week | Repo |
 |---|---|
 | 1 | [Python 101](Python_101) |
-| 2 | Python Data Types |
-| 3 | Functions |
-| 4 | Data Manipulation with Pandas |
-| 5 | Plotting |
-| 6 | Intro to OOP |
-| 7 | Predictive Modeling |
-| 8 | Cross Validation |
+| 2 | Functional Programming |
+| 3 | Intro to OOP |
