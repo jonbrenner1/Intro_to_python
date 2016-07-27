@@ -9,7 +9,10 @@ dict1 = {'apple': 'green', 'grape':'red', 'other grape':'green', 'apple':'red'}
 
 # loops through lists
 for index, element in enumerate(anything):
+    # My favorite method for inserting variables into strings
     print "Element {0}: {1}".format(index, element)
+    # another method for inserting into strings.
+    print "Element %i: %i" % (index, element)
 
 #through dicts
 for key, val in dict1.iteritems():
