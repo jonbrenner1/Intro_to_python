@@ -16,6 +16,14 @@ def most_common_letters(sentence):
     output = ''
     for word in sentence.lower().split():
         char_counter = Counter(word)
+        print word
+        print 'counter: '
+        print char_counter
+        print 'most common: '
+        print  char_counter.most_common(1)[0][0]
+        print '\n'
+
+
         output += char_counter.most_common(1)[0][0]
         output += ' '
 
@@ -44,4 +52,4 @@ def merge_dictionaries(d1, d2):
 
 if __name__ == '__main__':
     print most_common_letters("Welcome to Zipfian Academy!")
-    print merge_dictionaries({"a": 2, "b": 5}, {"a": 7, "c":10})
+    # print merge_dictionaries({"a": 2, "b": 5}, {"a": 7, "c":10})
