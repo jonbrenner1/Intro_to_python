@@ -43,4 +43,4 @@ if __name__ == '__main__':
     df = pull_data()
 
     while True:
-        identify_name(raw_input("What is your name: "))
+        identify_name(df, raw_input("What is your name: "))
