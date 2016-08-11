@@ -12,12 +12,17 @@ def pull_data():
     port='5439', user=os.environ['REDSHIFT_USER'], password=os.environ['REDSHIFT_PASS'])
 
     query = '''
-    select first_name, gender, sum(1) as n
+    select first_name, gender, sum(1) as n, case when gender = 'M' then .788 else .212 end as weight
     from customers
+    where gender in ('M', 'F')
     group by 1, 2
     ;
     '''
-    return pd.read_sql_query(query, con)
+
+    # weight n by number of users in that gender
+    df = pd.read_sql_query(query, con)
+    df['weighted_n'] = df.eval('n * weight')
+    return df
 
 def identify_name(df, name):
     ''' Given a name, predict the gender based on most common gender of name
@@ -29,7 +34,7 @@ def identify_name(df, name):
     '''
     try:
         df_query = df.query("first_name == @name")
-        if df_query.ix[df_query['n'].idxmax()].gender == 'M':
+        if df_query.ix[df_query['weighted_n'].idxmax()].gender == 'M':
             print "I think you're male"
         else:
             print "I think you're female"
