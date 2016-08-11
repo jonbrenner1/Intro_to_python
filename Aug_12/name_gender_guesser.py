@@ -44,3 +44,4 @@ if __name__ == '__main__':
 
     while True:
         identify_name(df, raw_input("What is your name: "))
+        print
