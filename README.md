@@ -21,5 +21,5 @@ This syllabus will adapt to what people are most interested in.
 | Week | Repo |
 |---|---|
 | 1 | [Python 101](Python_101) |
-| 2 | Functional Programming |
-| 3 | Intro to OOP |
+| 2 | Functional Programming(Python_101) |
+| 3 | Pulling and Saving Data(Aug_12) |
